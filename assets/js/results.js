@@ -101,6 +101,6 @@ function formSubmit(event) {
     
 }
 
-searchEl.addEventListener('submit', formSubmit);
 
+searchEl.addEventListener('submit', formSubmit);
 getParams();
