@@ -4,12 +4,9 @@
 //  drink is chosen in the dropdown box in the search form
 
 var searchEl = document.querySelector('#search-form');
-// for testing purposes only, will use document.location irl
-var testUrl = './search-results.html?q=margarita&criteria=drink';
 
 function getParams() {
-    // var searchParams = document.location.search.split('&');
-    var searchParams = testUrl.split('&');
+    var searchParams = document.location.search.split('&');
     console.log(searchParams);
 
     var query = searchParams[0].split('=').pop();
@@ -20,12 +17,66 @@ function getParams() {
 
     if(criteria === 'food') {
         // run food api fetch request
-        // searchMealApi(query);
+        searchMealApi(query);
     }
     if(criteria === 'drink') {
         // run drink api fetch request
         // searchDrinkApi(query);
     }
+}
+
+function searchMealApi(query) {
+    var mealUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+    mealUrl = mealUrl + query;
+
+    fetch(mealUrl)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            //console.log(data);
+
+            if(!data.meals.length) {
+                console.log('No results found');
+            }
+            for(var i = 0; i < data.meals.length; i++) {
+
+                var resultMeal = data.meals[i];
+
+                var recipeName = resultMeal.strMeal;
+                console.log(recipeName);
+    
+                var recipeImgSrc = resultMeal.strMealThumb;
+                console.log(recipeImgSrc);
+    
+                var instr = resultMeal.strInstructions;
+                console.log(instr);
+    
+                var ingredArr = [];
+                for(var i = 1; i < 20; i++) {
+                    var ingredID = 'strIngredient' + i;
+                    var ingredient = resultMeal[ingredID];
+                    if(ingredient) {
+                        ingredArr.push(ingredient);
+                    }
+                }
+                console.log(ingredArr);
+    
+                var measureArr = [];
+                for(var i = 1; i < 20; i++) {
+                    var measureID = 'strMeasure' + i;
+                    var measurement = resultMeal[measureID];
+                    if(measurement) {
+                        measureArr.push(measurement);
+                    }
+                }
+                console.log(measureArr);
+            }
+
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
 }
 
 function formSubmit(event) {
