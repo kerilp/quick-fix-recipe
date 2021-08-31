@@ -1,3 +1,6 @@
+// this file takes in search criteria from landing page
+// then switches to search-results
+
 var searchEl = document.querySelector('#search-form');
 
 function formSubmit(event) {
