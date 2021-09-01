@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
 
 <head>
-=======
-  <head>
->>>>>>> 1e35c356e298dea7487fa7c586957fa6a179e54f
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,17 +13,15 @@
 </head>
 
 <body>
-    <div class="header">
+    
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
         <div class="pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
                 <li class="pure-menu-item"><a href="./index.html" class="pure-menu-link">Home</a></li>
                 <li class="pure-menu-item"><a href="./my-recipes.html" class="pure-menu-link">My Recipes</a></li>
             </ul>
         </div>
-    </div>
-
-    <div class="sidebar pure-u-1 pure-u-md-1-4">
-        <form class="pure-form pure-form-stacked">
+        <form id="search-form" class="pure-form pure-form-stacked">
             <fieldset>
                 <legend>Search for Recipe:</legend>
                 <input id="search-input" type="text" placeholder="Search" />
@@ -41,86 +35,11 @@
         </form>
     </div>
 
-
-    <div class="pure-u-1 pure-u-md-3-4">
-        <h1 class="content-subhead">Search Results:</h1>
-        <!-- A wrapper for all the posts -->
-        <div id="display-results" class="pure-g">
-            <div class="card">
-                <div class="pure-u-1-3 container">
-                    <img src="https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg" alt="pasta"
-                        class="pure-img">
-                    <button style="position: absolute; top: 0; left: 0;" class="pure-button">Save</button>
-                </div>
-                <div class="pure-u-2-3">
-                    <div style="margin: 10px;">
-                        <h1 style="display: inline;">Recipe Name</h1>
-                        <h2>Ingredients:</h2>
-                        <table class="pure-table pure-table-horizontal">
-                            <tbody>
-                                <tr>
-                                    <td>ingredient</td>
-                                    <td>ingredient</td>
-                                    <td>ingredient</td>
-                                </tr>
-                                <tr>
-                                    <td>ingredient</td>
-                                    <td>ingredient</td>
-                                    <td>ingredient</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="pure-u-1">
-                            <h2>Preparation:</h2>
-                            <p>ishfo ihsgoisn gorsdhgo irhgoi rhgvi nvsdoihdoi
-                                hneog uhr egorhg orihngvol iswhg eihgwos ifhv neogikned
-                                vnwdsoif heogihe ogiheogihn olnvedio gheiog hnedoivn
-                                lvnro igih nreignrdgv rdngiv okrh gihr egwsk neihf oiv
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="pure-u-1-3 container">
-                    <img src="https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg" alt="pasta"
-                        class="pure-img">
-                    <button style="position: absolute; top: 0; left: 0;" class="pure-button">Save</button>
-                </div>
-                <div class="pure-u-2-3">
-                    <div style="margin: 10px;">
-                        <h1 style="display: inline;">Recipe Name</h1>
-                        <h2>Ingredients:</h2>
-                        <table class="pure-table pure-table-horizontal">
-                            <tbody>
-                                <tr>
-                                    <td>ingredient</td>
-                                    <td>ingredient</td>
-                                    <td>ingredient</td>
-                                </tr>
-                                <tr>
-                                    <td>ingredient</td>
-                                    <td>ingredient</td>
-                                    <td>ingredient</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="pure-u-1">
-                            <h2>Preparation:</h2>
-                            <p>ishfo ihsgoisn gorsdhgo irhgoi rhgvi nvsdoihdoi
-                                hneog uhr egorhg orihngvol iswhg eihgwos ifhv neogikned
-                                vnwdsoif heogihe ogiheogihn olnvedio gheiog hnedoivn
-                                lvnro igih nreignrdgv rdngiv okrh gihr egwsk neihf oiv
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <h1 id="result-text"></h1>
+        <!-- A wrapper for all the results -->
+        <div id="display-results" class="pure-g"></div>
     </div>
-
 
     <script src="./assets/js/cocktail.js"></script>
     <script src="./assets/js/results.js"></script>
