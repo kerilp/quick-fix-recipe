@@ -21,7 +21,7 @@ function getParams() {
     }
     if(criteria === 'drink') {
         // run drink api fetch request
-        // searchDrinkApi(query);
+        searchDrinkApi(query);
     }
 }
 
@@ -34,9 +34,9 @@ function searchMealApi(query) {
             return response.json();
         })
         .then(function(data) {
-            //console.log(data);
+            console.log(data);
 
-            if(!data.meals.length) {
+            if(data.meals === null ||!data.meals.length) {
                 console.log('No results found');
             }
             for(var i = 0; i < data.meals.length; i++) {
@@ -92,11 +92,11 @@ function formSubmit(event) {
 
     if(criteria === 'food') {
         // run food api fetch request
-        // searchMealApi(query);
+        searchMealApi(input);
     }
     if(criteria === 'drink') {
         // run drink api fetch request
-        // searchDrinkApi(query);
+        searchDrinkApi(input);
     }
     
 }
