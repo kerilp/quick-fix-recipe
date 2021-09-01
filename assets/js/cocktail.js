@@ -1,6 +1,5 @@
 var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 var searchByName;
-var cocktailArry = [];
 
 var formEl = document.querySelector("#drink-input");
 var displayEl = document.querySelector("#display");
@@ -12,18 +11,23 @@ function clickHandler(event) {
   var drinkName = formEl.value;
   if (drinkName) {
     searchByName = drinkName;
-    getAPI(searchByName);
+    searchDrinkApi(searchByName);
   }
 }
 
-function getAPI(name) {
+function searchDrinkApi(name) {
+  console.log(name);
   var endPoint = apiUrl + name;
   fetch(endPoint)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      if (data.drinks===null) {
+        // TODO: Return data instead of just logging
+        console.log("No results found");
+        return;
+      }
       var drinks = data.drinks;
       // strInstructions strTags strIngredient[7] strMeasure1[7] strGlass
       for (var i = 0; i < drinks.length; i++) {
@@ -37,13 +41,12 @@ function getAPI(name) {
           if (ingredient !== null) {
             const measure = drink["strMeasure" + j];
             if (measure !== null) {
-              ingredients.push(measure + ingredient);
+              ingredients.push(measure.trim() + " " + ingredient.trim());
             } else {
               ingredients.push(ingredient);
             }
           }
         }
-        console.log(ingredients);
 
         var glassType = drink.strGlass;
         var instruction = drink.strInstructions;
@@ -68,7 +71,10 @@ function getAPI(name) {
         displayEl.appendChild(ulEl);
         displayEl.appendChild(pEl2);
       }
+    })
+    .catch(function (error) {
+      console.log(error);
     });
 }
 
-buttonEl.addEventListener("click", clickHandler);
+//buttonEl.addEventListener("click", clickHandler);
