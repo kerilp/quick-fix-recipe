@@ -7,21 +7,41 @@
 
 /* Class Selectors */
 .pure-menu {
+<<<<<<< HEAD
     background-color: lemonchiffon;
+=======
+    background-color: lightgray;
+>>>>>>> main
     color: black;
 }
 
 .sidebar {
     background-color: lightgray;
+<<<<<<< HEAD
     color: black;
 }
 
 .l-box {
     padding: 1em;
+=======
+    height: 100vh;
+    position: fixed;
+    color: black;
+}
+
+.content {
+    margin-left: 25%;
+}
+
+.card {
+    margin: 10px;
+    border: 2px solid gray;
+>>>>>>> main
 }
 
 .container {
     position: relative;
+<<<<<<< HEAD
 }
 
 .card {
@@ -31,4 +51,48 @@
 
 #display-results {
     background-color:lightseagreen;
+=======
+    height: 100%;
+}
+
+.recipe-img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.recipe-info {
+    padding: 10px;
+}
+
+.recipe-name {
+    display: inline;
+}
+
+.recipe-info h3 {
+    margin: 4px 0px;
+}
+
+.ingred-list {
+    flex-wrap: wrap;
+}
+
+.ingred-list li {
+    display: inline-block;
+    padding: 4px;
+}
+
+.save-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* ID Selectors */
+#display-results {
+    background-color:lightseagreen;
+}
+
+#result-text {
+    padding: 10px;
+>>>>>>> main
 }

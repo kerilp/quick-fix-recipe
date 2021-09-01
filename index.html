@@ -12,54 +12,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
-    <link rel="stylesheet" href="./layout/grids.css">
-    <link rel="stylesheet" href="./layout/pure.css">
-    <link rel="stylesheet" href="./layout/style1.css">
-
+    <link rel="stylesheet" href="./assets/css/main-css/pure.css">
+    <link rel="stylesheet" href="./assets/css/main-css/style1.css">
+    <link rel="stylesheet" href="./assets/css/main-css/grids.css">
 </head>
 
 <div class="header">
 
     <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-        <a class="pure-menu-heading" href="">My Recipies</a>
+        <a class="pure-menu-heading" href="">My Recipes</a>
 
     </div>
 </div>
 <div class="splash-container">
     <div class="splash">
-        <div class="dropdown">
-            <button onclick="myFunction()" class="dropbar">Explore ..</button>
-            <div id="myDropdown" class="dropdown-content" id="myInput" onkeyup="filterFunction()">
-                <a href="#Food">Food</a>
-                <a href="#Drink">Drink</a>
-                
-            </div>
-        </div>
+
+       
+        <div class="splash-container">
+            <div class="splash">
+        <form class="pure-form pure-form-stacked">
+            <fieldset>
+                <input type="text" placeholder="Search.."/>
+                <select class="option">
+                    <option value disabled selected>Option</option>
+                    <option>Food</option>
+                    <option>Drink</option>
+                </select>
+                <button type="submit" class="pure">Submit</button>
+            </fieldset>
+        </form>  
 
 
 
-
-        <script>
-            function myFunction() {
-                document.getElementById("myDropdown").classList.toggle("show");
-            }
-
-            function filterFunction() {
-                var input, filter, a, i;
-                input = document.getElementById("myInput");
-                filter = input.value.toUpperCase();
-                div = document.getElementById("myDropdown");
-                a = div.getElementsByTagName("a");
-                for (i = 0; i < a.length; i++) {
-                    txtValue = a[i].textContent || a[i].innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        a[i].style.display = "";
-                    } else {
-                        a[i].style.display = "none";
-                    }
-                }
-            }
-        </script>
 
         </body>
 
