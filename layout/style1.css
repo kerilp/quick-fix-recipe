@@ -1,0 +1,266 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.7em;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.l-box {
+    padding: 1em;
+}
+
+.is-center {
+    text-align: center;
+}
+
+/*
+ * -- PURE FORM STYLES --
+ * Style the form inputs and labels
+ */
+.pure-form label {
+    margin: 1em 0 0;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.pure-form input[type] {
+    border: 2px solid #ddd;
+    box-shadow: none;
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.pure-button {
+    background-color: #000000;
+    color: white;
+    padding: 0.5em 2em;
+    border-radius: 5px;
+
+}
+
+a.pure-button-primary {
+    background-color: rgba(255, 255, 255, 0.918);
+    color: #000000;
+    border-radius: 5px;
+    font-size: 120%;
+
+}
+
+.home-menu {
+    padding: 0.5em;
+    text-align: left;
+    box-shadow: 0 1px 1px rgb(255, 255, 255);
+}
+.home-menu {
+    background-color: rgba(255, 255, 255, 0.918);
+    font-family: 'Open Sans', sans-serif;
+}
+.pure-menu.pure-menu-fixed {
+    /* Fixed menus normally have a border at the bottom. */
+    border-bottom: none;
+    /* I need a higher z-index here because of the scroll-over effect. */
+    z-index: 4;
+}
+
+.home-menu .pure-menu-heading {
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    font-size: 120%;
+   
+}
+
+/*
+ * -- SPLASH STYLES --
+ * This is the blue top section that appears on the page.
+ */
+
+.splash-container {
+    background-image: url("https://source.unsplash.com/1600x900/?cocktails,recipes");
+    z-index: 1;
+    overflow: hidden;
+    /* The following styles are required for the "scroll-over" effect */
+    width: 100%;
+    height: 88%;
+    top: 0;
+    left: 0;
+    position: fixed !important;
+}
+
+.splash {
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 100px; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.dropbar {
+    background-color: rgba(255, 255, 255, 0.918);
+    color: rgb(0, 0, 0);
+    padding: 30px 60px 30px 60px;
+    font-size: 50px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+  }
+
+
+  /* ---------dropdown-------- */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000d3;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid  #000000d3;;
+    z-index: 1;
+  
+  }
+  
+  .dropdown-content a {
+    color:white;
+    padding: 30px 20px 20px 30px;
+    text-decoration: none;
+    display: block;
+    margin:auto;
+  
+  }
+  
+  .dropdown a:hover 
+  {background-color: rgb(255, 255, 255);
+    color:black;
+}
+  
+  
+  .show {display: block;}
+/* ------------------------------------------ */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  
+  .topnav input[type=text] {
+    border: 1px solid rgb(0, 0, 0);  
+  }
+}
+
+
+
+
+
+
+
+
+/* This is the main heading that appears on the blue section */
+.splash-head {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.918);
+    border: white 1px solid;
+    padding: 1em 1.6em;
+    font-weight: 100;
+    border-radius: 5px;
+    line-height: 1em;
+}
+
+/*
+ * -- CONTENT STYLES --
+ * This represents the content area (everything below the blue section)
+ */
+.content-wrapper {
+    /* These styles are required for the "scroll-over" effect */
+    position: absolute;
+    top: 87%;
+    width: 100%;
+    min-height: 12%;
+    z-index: 2;
+  
+
+}
+
+/* We want to give the content area some more padding */
+.content {
+    padding: 1em 1em 3em;
+}
+
+
+
+/*
+ * -- TABLET (AND UP) MEDIA QUERIES --
+ * On tablets and other medium-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+@media (min-width: 48em) {
+
+    /* We increase the body font size */
+    body {
+        font-size: 16px;
+    }
+
+    /* We decrease the width of the .splash, since we have more width
+    to work with */
+    .splash {
+        width: 50%;
+        height: 50%;
+    }
+
+    .splash-head {
+        font-size: 250%;
+    }
+
+
+    /* We remove the border-separator assigned to .l-box-lrg */
+    .l-box-lrg {
+        border: none;
+    }
+
+}
+
+/*
+ * -- DESKTOP (AND UP) MEDIA QUERIES --
+ * On desktops and other large devices, we want to over-ride some
+ * of the mobile and tablet styles.
+ */
+@media (min-width: 78em) {
+    /* We increase the header font size even more */
+    .splash-head {
+        font-size: 300%;
+    }
+
+    .splash-container {
+        background-image: url("https://source.unsplash.com/1600x900/?cocktails,recipes");
+    }}
