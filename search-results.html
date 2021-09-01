@@ -1,70 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-      crossorigin="anonymous"
-    />
-   </head>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="./assets/css/results.css">
+    <title>Search Results</title>
+</head>
 
-  <body>
-    <header>
-      <nav>
-        <ul class="nav nav-tabs fw-bold fs-2 link-light">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">My Recipes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About us</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+<body>
+    <div class="header">
+        <div class="pure-menu pure-menu-horizontal">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="./index.html" class="pure-menu-link">Home</a></li>
+                <li class="pure-menu-item"><a href="./my-recipes.html" class="pure-menu-link">My Recipes</a></li>
+            </ul>
+        </div>
+    </div>
 
-    <section class="container-fluid">
-      <div class="row vh-100">
-        
-        <form id="search-form" class="mb-2 col-4 py-2 bg-dark ">
-          <h1 class="text-light h4 p-2">Search Recipe Results</h1>
-          <input
-            id="search-input"
-            class="form-input w-100 mb-2 py-2"
-            type="text"
-            placeholder="Search!"
-          />
-          <select id="search-criteria" class="form-input w-100 col-4 mb-2 py-2">
-            <option value="" disabled selected>Select a format...</option>
-            <option value="drink">Drink</option>
-            <option value="food">Food</option>
-          </select>
-          <button class="button-secondary btn-lg btn-success m-4">Secondary Button</button>
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <form class="pure-form pure-form-stacked">
+            <fieldset>
+                <legend>Search for Recipe:</legend>
+                <input id="search-input" type="text" placeholder="Search" />
+                <select id="search-criteria">
+                    <option value disabled selected>Search by Type</option>
+                    <option value="food">Food</option>
+                    <option value="drink">Drink</option>
+                </select>
+                <button type="submit" class="pure-button pure-button-primary">Search</button>
+            </fieldset>
         </form>
+    </div>
 
-        <section id="container" class="col-8">
-          <div id="display">
-            <img src="" alt="" />
 
-            <p></p>
-          </div>
-        </section>
-      </div>
-    </section>
+    <div class="pure-u-1 pure-u-md-3-4">
+        <h1 class="content-subhead">Search Results:</h1>
+        <!-- A wrapper for all the posts -->
+        <div id="display-results" class="pure-g">
+            <div class="card">
+                <div class="pure-u-1-3 container">
+                    <img src="https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg" alt="pasta"
+                        class="pure-img">
+                    <button style="position: absolute; top: 0; left: 0;" class="pure-button">Save</button>
+                </div>
+                <div class="pure-u-2-3">
+                    <div style="margin: 10px;">
+                        <h1 style="display: inline;">Recipe Name</h1>
+                        <h2>Ingredients:</h2>
+                        <table class="pure-table pure-table-horizontal">
+                            <tbody>
+                                <tr>
+                                    <td>ingredient</td>
+                                    <td>ingredient</td>
+                                    <td>ingredient</td>
+                                </tr>
+                                <tr>
+                                    <td>ingredient</td>
+                                    <td>ingredient</td>
+                                    <td>ingredient</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pure-u-1">
+                            <h2>Preparation:</h2>
+                            <p>ishfo ihsgoisn gorsdhgo irhgoi rhgvi nvsdoihdoi
+                                hneog uhr egorhg orihngvol iswhg eihgwos ifhv neogikned
+                                vnwdsoif heogihe ogiheogihn olnvedio gheiog hnedoivn
+                                lvnro igih nreignrdgv rdngiv okrh gihr egwsk neihf oiv
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="pure-u-1-3 container">
+                    <img src="https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg" alt="pasta"
+                        class="pure-img">
+                    <button style="position: absolute; top: 0; left: 0;" class="pure-button">Save</button>
+                </div>
+                <div class="pure-u-2-3">
+                    <div style="margin: 10px;">
+                        <h1 style="display: inline;">Recipe Name</h1>
+                        <h2>Ingredients:</h2>
+                        <table class="pure-table pure-table-horizontal">
+                            <tbody>
+                                <tr>
+                                    <td>ingredient</td>
+                                    <td>ingredient</td>
+                                    <td>ingredient</td>
+                                </tr>
+                                <tr>
+                                    <td>ingredient</td>
+                                    <td>ingredient</td>
+                                    <td>ingredient</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pure-u-1">
+                            <h2>Preparation:</h2>
+                            <p>ishfo ihsgoisn gorsdhgo irhgoi rhgvi nvsdoihdoi
+                                hneog uhr egorhg orihngvol iswhg eihgwos ifhv neogikned
+                                vnwdsoif heogihe ogiheogihn olnvedio gheiog hnedoivn
+                                lvnro igih nreignrdgv rdngiv okrh gihr egwsk neihf oiv
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 
     <script src="./assets/js/cocktail.js"></script>
     <script src="./assets/js/results.js"></script>
-  </body>
-</html>
+</body>
 
+</html>
