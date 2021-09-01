@@ -1,0 +1,34 @@
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Class Selectors */
+.pure-menu {
+    background-color: lemonchiffon;
+    color: black;
+}
+
+.sidebar {
+    background-color: lightgray;
+    color: black;
+}
+
+.l-box {
+    padding: 1em;
+}
+
+.container {
+    position: relative;
+}
+
+.card {
+    margin: 10px;
+    border: 2px solid gray;
+}
+
+#display-results {
+    background-color:lightseagreen;
+}
