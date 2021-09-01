@@ -8,6 +8,7 @@ body {
     line-height: 1.7em;
     font-size: 13px;
     font-family: 'Open Sans', sans-serif;
+   
 }
 
 .pure-img-responsive {
@@ -34,37 +35,47 @@ body {
 }
 
 .pure-form input[type] {
-    border: 2px solid #ddd;
+   border: 1 px solid black;
     box-shadow: none;
     font-size: 100%;
     width: 100%;
     margin-bottom: 1em;
+   font-size: 40px;
+    
 }
 
-.pure-button {
-    background-color: #000000;
-    color: white;
+.pure {
+    color: rgb(0, 0, 0);
     padding: 0.5em 2em;
-    border-radius: 5px;
+    box-shadow: none;
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    background-color: hsl(0, 0%, 100%);
 
 }
-
-a.pure-button-primary {
-    background-color: rgba(255, 255, 255, 0.918);
-    color: #000000;
-    border-radius: 5px;
-    font-size: 120%;
-
+.pure:hover{
+    background-color: hsla(0, 0%, 0%, 0.788);
+    color: rgb(255, 255, 255);
+ 
 }
-
+.option{
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+    text-align: center;
+    margin-bottom: 1em;
+}
 .home-menu {
     padding: 0.5em;
     text-align: left;
-    box-shadow: 0 1px 1px rgb(255, 255, 255);
+  
 }
 .home-menu {
-    background-color: rgba(255, 255, 255, 0.918);
+    background-color: rgba(0, 0, 0, 0.685);
     font-family: 'Open Sans', sans-serif;
+   
 }
 .pure-menu.pure-menu-fixed {
     /* Fixed menus normally have a border at the bottom. */
@@ -74,7 +85,7 @@ a.pure-button-primary {
 }
 
 .home-menu .pure-menu-heading {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-weight: 400;
     font-size: 120%;
    
@@ -86,7 +97,7 @@ a.pure-button-primary {
  */
 
 .splash-container {
-    background-image: url("https://source.unsplash.com/1600x900/?cocktails,recipes");
+    background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
     z-index: 1;
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
@@ -116,49 +127,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.dropbar {
-    background-color: rgba(255, 255, 255, 0.918);
-    color: rgb(0, 0, 0);
-    padding: 30px 60px 30px 60px;
-    font-size: 50px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
-    justify-content: center;
-  }
 
-
-  /* ---------dropdown-------- */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #000000d3;
-    min-width: 230px;
-    overflow: auto;
-    border: 1px solid  #000000d3;;
-    z-index: 1;
-  
-  }
-  
-  .dropdown-content a {
-    color:white;
-    padding: 30px 20px 20px 30px;
-    text-decoration: none;
-    display: block;
-    margin:auto;
-  
-  }
-  
-  .dropdown a:hover 
-  {background-color: rgb(255, 255, 255);
-    color:black;
-}
-  
   
   .show {display: block;}
 /* ------------------------------------------ */
@@ -172,15 +141,9 @@ body {
     padding: 14px;
   }
   
-  .topnav input[type=text] {
-    border: 1px solid rgb(0, 0, 0);  
-  }
-}
-
-
-
-
-
+  .splash-container {
+    background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
+}}
 
 
 
@@ -188,12 +151,12 @@ body {
 .splash-head {
     font-size: 20px;
     font-weight: bold;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.918);
-    border: white 1px solid;
+    border: rgb(255, 255, 255) 5px solid;
     padding: 1em 1.6em;
     font-weight: 100;
-    border-radius: 5px;
+  
     line-height: 1em;
 }
 
@@ -242,13 +205,16 @@ body {
         font-size: 250%;
     }
 
+    .splash-container {
+        background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
+    }}
 
     /* We remove the border-separator assigned to .l-box-lrg */
     .l-box-lrg {
         border: none;
     }
 
-}
+
 
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
@@ -262,5 +228,5 @@ body {
     }
 
     .splash-container {
-        background-image: url("https://source.unsplash.com/1600x900/?cocktails,recipes");
+        background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
     }}
