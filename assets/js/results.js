@@ -22,6 +22,7 @@ function getParams() {
     if(criteria === 'drink') {
         // run drink api fetch request
         searchDrinkApi(query);
+        //renderPage()
     }
 }
 
@@ -35,7 +36,7 @@ function searchMealApi(query) {
         })
         .then(function(data) {
             console.log(data);
-
+    // condition null is added.
             if(data.meals === null ||!data.meals.length) {
                 console.log('No results found');
             }
@@ -97,6 +98,9 @@ function formSubmit(event) {
     if(criteria === 'drink') {
         // run drink api fetch request
         searchDrinkApi(input);
+        //renderPage()
+        //displayEl.innerHTML = ""
+        
     }
     
 }
