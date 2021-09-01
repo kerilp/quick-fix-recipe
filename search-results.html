@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,35 +10,28 @@
 </head>
 
 <body>
-    
     <h1 class="text-primary">Search Recipe Results</h1>
     <form id="search-form" class="mb-2">
       <input id="search-input" class="form-input w-100" type="text" placeholder="Search!">
-      <select id="format-input" class="form-input w-100">
+      <select id="search-criteria" class="form-input w-100">
         <option value="" disabled selected>Select a format...</option>
-        <option value="drink 1">Drink 1</option>
-        <option value="drink 2">Drink 2</option>
-        <option value="food">food</option>
-        <option value="food 2">food 2</option>
-        <option value="food 3">food 3</option>
-        <option value="food 4">food 4</option>
-        <option value="recipes">recipes</option>
-        <option value="websites">Websites</option>
+        <option value="drink">Drink</option>
+        <option value="food">Food</option>
+      </select>
+      <input type="submit" >
+    </form>
 
+    <section id="container">
+        <div id="display">
+          <img src="" alt="" />
+  
+          <p></p>
+        </div>
+      </section>
 
-
-
-
-
-
-
-
-
-    <div class="search-box">
-        <input class="search-txt" type="text" name="" placeholder="Type to search">
-        <a class="search-btn" href="#"></a>
-    </div>
-    
+    <script src="./assets/js/cocktail.js"></script>
     <script src="./assets/js/results.js"></script>
+   
 </body>
+
 </html>
