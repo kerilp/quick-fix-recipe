@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <title>Search Results</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul class="nav nav-tabs fw-bold fs-2 link-light">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About us</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="container-fluid">
+      <div class="row vh-100">
+        
+        <form id="search-form" class="mb-2 col-4 py-2 bg-dark ">
+          <h1 class="text-light h4 p-2">Search Recipe Results</h1>
+          <input
+            id="search-input"
+            class="form-input w-100 mb-2 py-2"
+            type="text"
+            placeholder="Search!"
+          />
+          <select id="search-criteria" class="form-input w-100 col-4 mb-2 py-2">
+            <option value="" disabled selected>Select a format...</option>
+            <option value="drink">Drink</option>
+            <option value="food">Food</option>
+          </select>
+          <button class="button-secondary btn-lg btn-success m-4">Secondary Button</button>
+        </form>
+
+        <section id="container" class="col-8">
+          <div id="display">
+            
+           
+          </div>
+        </section>
+      </div>
+    </section>
+
+
+    <script src="./assets/js/cocktail.js"></script>
+    <script src="./assets/js/results.js"></script>
+  </body>
+</html>
