@@ -78,18 +78,11 @@ function searchMealApi(query) {
         .then(function (response) {
             return response.json();
         })
-<<<<<<< HEAD
-        .then(function(data) {
-            console.log(data);
-    // condition null is added.
-            if(data.meals === null ||!data.meals.length) {
-=======
         .then(function (data) {
 
             resultTextEl.textContent = 'Showing results for ' + query;
 
             if (data.meals === null || !data.meals.length) {
->>>>>>> d5fc04b009a9820dc72ef541dedcc047e64db4dd
                 console.log('No results found');
                 resultTextEl.textContent = 'No results for ' + query;
             } else {
@@ -142,23 +135,8 @@ function formSubmit(event) {
     var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;
     location.assign(queryString);
 
-<<<<<<< HEAD
-    if(criteria === 'food') {
-        // run food api fetch request
-        searchMealApi(input);
-    }
-    if(criteria === 'drink') {
-        // run drink api fetch request
-        searchDrinkApi(input);
-        //renderPage()
-        //displayEl.innerHTML = ""
-        
-    }
-    
-=======
     resultContentEl.textContent = '';
     getParams();
->>>>>>> d5fc04b009a9820dc72ef541dedcc047e64db4dd
 }
 
 getParams();
