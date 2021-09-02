@@ -104,7 +104,6 @@ function searchMealApi(query) {
             return response.json();
         })
         .then(function (data) {
-
             resultTextEl.textContent = 'Showing results for ' + query;
 
             if (data.meals === null || !data.meals.length) {

@@ -1,108 +1,117 @@
 var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
-var searchByName;
 
-var formEl = document.querySelector("#drink-input");
-var displayEl = document.querySelector("#display");
-var buttonEl = document.querySelector("#btn");
+function displayCard2(recipeObj) {
+  var card = document.createElement("div");
+  card.classList.add("card");
 
-var cockTails = {
-  images: [],
-  names: [],
-  ingredients: [],
-  glasses: [],
-  instructions: [],
-};
-console.log(cockTails);
+  var imgContainer = document.createElement("div");
+  imgContainer.classList.add("pure-u-1-3", "container");
 
-function searchDrinkApi(name) {
+  var img = document.createElement("img");
+  img.setAttribute("src", recipeObj.images);
+  img.setAttribute("alt", recipeObj.names);
+  img.classList.add("pure-img", "recipe-img");
+  imgContainer.appendChild(img);
+
+  var saveBtn = document.createElement("button");
+  saveBtn.classList.add("pure-button", "save-button");
+  saveBtn.textContent = "Save";
+  imgContainer.appendChild(saveBtn);
+
+  var recipeDiv = document.createElement("div");
+  recipeDiv.classList.add("pure-u-2-3", "recipe-info");
+
+  var title = document.createElement("h2");
+  title.classList.add("recipe-name");
+  title.textContent = recipeObj.names;
+  recipeDiv.appendChild(title);
+
+  var glass = document.createElement('h3');
+  glass.textContent = "Glass:";
+  recipeDiv.appendChild(glass);
+
+  var glasstype = document.createElement("p");
+  glasstype.textContent = recipeObj.glasses;
+  recipeDiv.appendChild(glasstype);
+
+  var ingredTitle = document.createElement("h3");
+  ingredTitle.textContent = "Ingredients:";
+  recipeDiv.appendChild(ingredTitle);
+
+  var ingredList = document.createElement("ul");
+  ingredList.classList.add("ingred-list");
+  var ingredient = recipeObj.ingredients;
+  for (var j = 0; j < ingredient.length; j++) {
+    var cockTailIngredient = ingredient[j];
+    var ingredientList = document.createElement("li");
+    ingredientList.textContent = cockTailIngredient;
+    ingredList.appendChild(ingredientList);
+    //console.log(ingredientList)
+  }
+  recipeDiv.appendChild(ingredList);
+
+  var prepTitle = document.createElement("h3");
+  prepTitle.textContent = "Preparation:";
+  recipeDiv.appendChild(prepTitle);
+
+  var prepInstr = document.createElement("p");
+  prepInstr.textContent = recipeObj.instructions;
+  recipeDiv.appendChild(prepInstr);
+
+  card.appendChild(imgContainer);
+  card.appendChild(recipeDiv);
+  resultContentEl.appendChild(card);
+}
+
+function searchDrinkApi(query) {
   //console.log(name);
-  var endPoint = apiUrl + name;
+  var endPoint = apiUrl + query;
   fetch(endPoint)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
+      resultTextEl.textContent = "Showing results for " + query;
       //console.log(data);
-      if (data.drinks === null) {
+      if (data.drinks === null || !data.drinks.length) {
         // TODO: Return data instead of just logging
         console.log("No results found");
+        resultTextEl.textContent = "No results for " + query;
         return;
-      }
-      var drinks = data.drinks;
-      // strInstructions strTags strIngredient[7] strMeasure1[7] strGlass
-      for (var i = 0; i < drinks.length; i++) {
-        var drink = drinks[i];
-        var drinkImg = drink.strDrinkThumb;
-        var ingredients = [];
-        var drinkName = drink.strDrink;
-        var glassType = drink.strGlass;
-        var instruction = drink.strInstructions;
-
-        cockTails.images.push(drinkImg); //push image to global object
-        cockTails.ingredients.push(ingredients); //push ingredient array to global object;
-        cockTails.names.push(drinkName); //push name to global object;
-        cockTails.glasses.push(glassType); //push glass type to global object;
-        cockTails.instructions.push(instruction); //push instruction array to global object;
-
-        // Add ingredients to array
-        for (var j = 1; j <= 15; j++) {
-          var ingredient = drink["strIngredient" + j];
-          if (ingredient !== null) {
-            const measure = drink["strMeasure" + j];
-            if (measure !== null) {
-              ingredients.push(measure.trim() + " " + ingredient.trim());
-            } else {
-              ingredients.push(ingredient);
+      } else {
+        resultContentEl.textContent = "";
+        var drinks = data.drinks;
+        for (var i = 0; i < drinks.length; i++) {
+          var drink = drinks[i];
+          var drinkImg = drink.strDrinkThumb;
+          var drinkName = drink.strDrink;
+          var glassType = drink.strGlass;
+          var instruction = drink.strInstructions;
+          var ingredients = [];
+          for (var j = 1; j <= 15; j++) {
+            var ingredient = drink["strIngredient" + j];
+            if (ingredient !== null) {
+              const measure = drink["strMeasure" + j];
+              if (measure !== null) {
+                ingredients.push(measure.trim() + " " + ingredient.trim());
+              } else {
+                ingredients.push(ingredient);
+              }
             }
           }
+          var cockTails = {
+            images: drinkImg,
+            names: drinkName,
+            ingredients: ingredients,
+            glasses: glassType,
+            instructions: instruction,
+          };
+
+          displayCard2(cockTails);
         }
       }
     })
     .catch(function (error) {
       console.log(error);
     });
-    renderpage()
 }
-
-function renderpage(){
-  for (var i = 0; i < cockTails.glasses.length; i++) {
-    var imgEl = document.createElement("img");
-    var pEl3 = document.createElement("h5");
-    var pEl = document.createElement("p");
-    var ulEl = document.createElement("ul");
-    var pEl2 = document.createElement("p");
-
-    var glass = cockTails.glasses[i];
-    var instruction = cockTails.instructions[i];
-    var cocktailName = cockTails.names[i];
-    var image = cockTails.images[i];
-    var ingredient = cockTails.ingredients[i]
-
-    for (var  j= 0; j < ingredient.length; j++) {
-      var cockTailIngredient = ingredient[j];
-      var ingredientList = document.createElement("li");
-      ingredientList.textContent = cockTailIngredient;
-      ulEl.appendChild(ingredientList);
-      //console.log(ingredientList)
-    }
-    
-    imgEl.src = image;
-    pEl3.innerHTML = cocktailName;
-    pEl.innerHTML = "Type of Glass to Use: " + glass;
-    pEl2.innerHTML = "Instructions: " + instruction;
-
-    imgEl.setAttribute("style", "width:200px; height:200px");
-    displayEl.appendChild(imgEl);
-    displayEl.appendChild(pEl3);
-    displayEl.appendChild(pEl);
-    displayEl.appendChild(ulEl);
-    displayEl.appendChild(pEl2);
-}
-}
-
-
-
-
-  
-
-
