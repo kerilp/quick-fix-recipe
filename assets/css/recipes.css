@@ -1,0 +1,101 @@
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Class Selectors */
+.pure-menu {
+    background-color: white;
+    color: black;
+}
+
+.sidebar {
+    background-color: rgb(88, 192, 88);
+    height: 100vh;
+    position: fixed;
+    color: black;
+}
+
+.content {
+    margin-left: 25%;
+    background-color: lightgray;
+}
+
+.card {
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+}
+
+.recipe-img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.recipe-info {
+    padding: 10px;
+}
+
+.recipe-name {
+    display: inline;
+}
+
+.recipe-info h3 {
+    margin: 4px 0px;
+}
+
+.title-underline {
+    border-top: 1px solid gray;
+}
+
+.ingred-list {
+    flex-wrap: wrap;
+}
+
+.ingred-list li {
+    display: inline-block;
+    padding: 4px;
+}
+
+.tags li {
+    display: inline-block;
+    padding: 6px;
+    color: gray;
+    font-style: italic;
+}
+
+.save-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 200%;
+    padding: 0.1em 0.3em;
+}
+
+.saved {
+    background-color: goldenrod;
+}
+
+/* ID Selectors */
+#result-text {
+    padding: 10px;
+}
+
+@media (max-width: 767px) {
+    .sidebar {
+        height: auto;
+        position: relative;
+    }
+    .content {
+        margin-left: 0%;
+    }
+}

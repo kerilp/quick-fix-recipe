@@ -54,7 +54,6 @@ function displayCard(recipeObj) {
     recipeDiv.appendChild(title);
 
     var ingredTitle = document.createElement('h3');
-    ingredTitle.classList.add('ingred-title');
     ingredTitle.textContent = 'Ingredients:';
     recipeDiv.appendChild(ingredTitle);
 
@@ -69,8 +68,11 @@ function displayCard(recipeObj) {
 
     if(recipeObj.glass) {
         var glass = document.createElement('h3');
+        glass.classList.add('title-underline');
         glass.textContent = 'Type of Glass: ' + recipeObj.glass;
         recipeDiv.appendChild(glass);
+    } else {
+        ingredTitle.classList.add('title-underline');
     }
 
     var prepTitle = document.createElement('h3');
