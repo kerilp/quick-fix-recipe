@@ -107,7 +107,7 @@ function searchMealApi(query) {
             return response.json();
         })
         .then(function (data) {
-            var searchTerm = query.replace("%20", " ");
+            var searchTerm = query.replaceAll("%20", " ");
             resultTextEl.textContent = 'Showing results for ' + searchTerm;
 
             if (data.meals === null || !data.meals.length) {
