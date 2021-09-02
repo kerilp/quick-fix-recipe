@@ -20,6 +20,7 @@ function getParams() {
 function displayCard(recipeObj) {
     var card = document.createElement('div');
     card.classList.add('card');
+    card.setAttribute('id', recipeObj.id);
 
     var imgContainer = document.createElement('div');
     imgContainer.classList.add('pure-u-1-3', 'container');
@@ -44,6 +45,7 @@ function displayCard(recipeObj) {
     recipeDiv.appendChild(title);
 
     var ingredTitle = document.createElement('h3');
+    ingredTitle.classList.add('ingred-title');
     ingredTitle.textContent = 'Ingredients:';
     recipeDiv.appendChild(ingredTitle);
 
@@ -51,7 +53,7 @@ function displayCard(recipeObj) {
     ingredList.classList.add('ingred-list');
     for (var i = 0; i < recipeObj.ingred.length; i++) {
         var item = document.createElement('li');
-        item.textContent = recipeObj.ingred[i];
+        item.textContent = '• ' + recipeObj.ingred[i];
         ingredList.appendChild(item);
     }
     recipeDiv.appendChild(ingredList);
@@ -63,6 +65,15 @@ function displayCard(recipeObj) {
     var prepInstr = document.createElement('p');
     prepInstr.textContent = recipeObj.instr;
     recipeDiv.appendChild(prepInstr);
+
+    var tags = document.createElement('ul');
+    tags.classList.add('tags');
+    for (var i = 0; i < recipeObj.tags.length; i++) {
+        var tag = document.createElement('li');
+        tag.textContent = '#' + recipeObj.tags[i];
+        tags.appendChild(tag);
+    }
+    recipeDiv.appendChild(tags);
 
     card.appendChild(imgContainer);
     card.appendChild(recipeDiv);
@@ -88,6 +99,7 @@ function searchMealApi(query) {
                 resultContentEl.textContent = '';
                 for (var i = 0; i < data.meals.length; i++) {
                     var resultMeal = data.meals[i];
+                    var recipeId = resultMeal.idMeal;
                     var recipeName = resultMeal.strMeal;
                     var recipeImgSrc = resultMeal.strMealThumb;
                     var instructions = resultMeal.strInstructions;
@@ -103,12 +115,21 @@ function searchMealApi(query) {
                             }
                         }
                     }
+                    var tagsArr = [];
+                    if(resultMeal.strCategory) {
+                        tagsArr.push(resultMeal.strCategory);
+                    }
+                    if(resultMeal.strArea) {
+                        tagsArr.push(resultMeal.strArea);
+                    }
 
                     var mealObj = {
+                        id: recipeId,
                         name: recipeName,
                         image: recipeImgSrc,
                         ingred: ingredArr,
-                        instr: instructions
+                        instr: instructions,
+                        tags: tagsArr
                     }
 
                     displayCard(mealObj);

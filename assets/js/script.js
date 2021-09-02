@@ -10,8 +10,8 @@ function formSubmit(event) {
     var criteria = document.querySelector('#search-criteria').value;
 
     if(!input || !criteria) {
-        // does not search
-        // displays modal telling user they must enter a search term
+        console.error('No search criteria entered');
+        return;
     }
 
     var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;
