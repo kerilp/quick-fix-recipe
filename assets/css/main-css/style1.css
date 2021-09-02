@@ -1,27 +1,26 @@
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    line-height: 1.7em;
-    font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
-   
+  line-height: 1.7em;
+  font-size: 13px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .pure-img-responsive {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .l-box {
-    padding: 1em;
+  padding: 1em;
 }
 
 .is-center {
-    text-align: center;
+  text-align: center;
 }
 
 /*
@@ -29,66 +28,74 @@ body {
  * Style the form inputs and labels
  */
 .pure-form label {
-    margin: 1em 0 0;
-    font-weight: bold;
-    font-size: 100%;
+  margin: 1em 0 0;
+  font-weight: bold;
+  font-size: 100%;
 }
 
 .pure-form input[type] {
-   border: 1 px solid black;
-    box-shadow: none;
-    font-size: 100%;
-    width: 100%;
-    margin-bottom: 1em;
-   font-size: 40px;
-    
+  background-color: hsla(0, 0%, 100%, 0.884);
+  box-shadow: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 100%;
+  width: 100%;
+  margin-bottom: 1em;
+  font-size: 50px;
+  padding: 30px 30px 30px 30px;
 }
 
 .pure {
-    color: rgb(0, 0, 0);
-    padding: 0.5em 2em;
-    box-shadow: none;
-    font-size: 100%;
-    width: 100%;
-    margin-bottom: 1em;
-    margin-top: 2em;
-    background-color: hsl(0, 0%, 100%);
+  border: none;
+  color: white;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  color: rgb(85, 85, 85);
+  padding: 1em 2em;
+  box-shadow: none;
+  font-size: 20px;
+  width: 50%;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 5px;
+  margin-top: 2em;
+  background-color: hsla(0, 0%, 100%, 0.884);
+}
+.pure:hover {
+  background-color: hsl(0, 0%, 100%);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 12px 16px 0 rgba(175, 175, 175, 0.329),
+    0 17px 50px 0 rgba(53, 53, 53, 0.295);
+}
 
-}
-.pure:hover{
-    background-color: hsla(0, 0%, 0%, 0.788);
-    color: rgb(255, 255, 255);
- 
-}
-.option{
-    font-size: 100%;
-    width: 100%;
-    margin-bottom: 1em;
-    text-align: center;
-    margin-bottom: 1em;
+.option {
+  font-size: 100%;
+  width: 75%;
+  margin-bottom: 1em;
+  text-align: center;
+  margin-bottom: 1em;
+  justify-content: center;
 }
 .home-menu {
-    padding: 0.5em;
-    text-align: left;
-  
+  padding: 0.5em;
+  text-align: left;
 }
 .home-menu {
-    background-color: rgba(0, 0, 0, 0.685);
-    font-family: 'Open Sans', sans-serif;
-   
+  background-color: hsla(0, 0%, 100%, 0.884);
+  font-family: "Open Sans", sans-serif;
 }
 .pure-menu.pure-menu-fixed {
-    /* Fixed menus normally have a border at the bottom. */
-    border-bottom: none;
-    /* I need a higher z-index here because of the scroll-over effect. */
-    z-index: 4;
+  /* Fixed menus normally have a border at the bottom. */
+  border-bottom: none;
+  /* I need a higher z-index here because of the scroll-over effect. */
+  z-index: 4;
 }
 
 .home-menu .pure-menu-heading {
-    color: rgb(255, 255, 255);
-    font-weight: 400;
-    font-size: 120%;
-   
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  font-size: 45px;
 }
 
 /*
@@ -97,42 +104,46 @@ body {
  */
 
 .splash-container {
-    background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
-    z-index: 1;
-    overflow: hidden;
-    /* The following styles are required for the "scroll-over" effect */
-    width: 100%;
-    height: 88%;
-    top: 0;
-    left: 0;
-    position: fixed !important;
+  background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
+  z-index: 1;
+  overflow: hidden;
+  /* The following styles are required for the "scroll-over" effect */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed !important;
 }
 
 .splash {
-    width: 80%;
-    height: 50%;
-    margin: auto;
-    position: absolute;
-    top: 100px; left: 0; bottom: 0; right: 0;
-    text-align: center;
-    text-transform: uppercase;
+  width: 80%;
+  height: 50%;
+  margin: auto;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-
-
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-
-  
-  .show {display: block;}
+.show {
+  display: block;
+}
 /* ------------------------------------------ */
 @media screen and (max-width: 600px) {
-  .topnav a, .topnav input[type=text] {
+  .topnav a,
+  .topnav input[type="text"] {
     float: none;
     display: block;
     text-align: left;
@@ -140,24 +151,67 @@ body {
     margin: 0;
     padding: 14px;
   }
-  
+
   .splash-container {
     background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
-}}
+  }
 
+  .home-menu {
+    background-color: hsla(0, 0%, 0%, 0.822);
+    font-family: "Open Sans", sans-serif;
+   
+  }
+  .home-menu .pure-menu-heading {
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 45px;
+  }
+  .pure-form input[type] {
+    background-color: hsla(0, 0%, 0%, 0.822);
+    box-shadow: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+    font-size: 31px;
+    padding: 30px 30px 30px 30px;
+  }
 
+  .pure {
+    border: none;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    color: rgb(255, 255, 255);
+    padding: 1em 2em;
+    box-shadow: none;
+    font-size: 20px;
+    width: 50%;
+    margin-bottom: 1em;
+    border: none;
+    border-radius: 5px;
+    margin-top: 2em;
+    background-color: hsla(0, 0%, 0%, 0.822);
+  }
+  .pure:hover {
+    background-color: hsl(0, 0%, 0%);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 12px 16px 0 rgba(68, 68, 68, 0.63),
+      0 17px 50px 0 rgba(70, 70, 70, 0.185);
+  }
+}
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    background-color: rgba(255, 255, 255, 0.918);
-    border: rgb(255, 255, 255) 5px solid;
-    padding: 1em 1.6em;
-    font-weight: 100;
-  
-    line-height: 1em;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.918);
+  border: rgb(255, 255, 255) 5px solid;
+  padding: 1em 1.6em;
+  font-weight: 100;
+  line-height: 1em;
 }
 
 /*
@@ -165,22 +219,18 @@ body {
  * This represents the content area (everything below the blue section)
  */
 .content-wrapper {
-    /* These styles are required for the "scroll-over" effect */
-    position: absolute;
-    top: 87%;
-    width: 100%;
-    min-height: 12%;
-    z-index: 2;
-  
-
+  /* These styles are required for the "scroll-over" effect */
+  position: absolute;
+  top: 87%;
+  width: 100%;
+  min-height: 12%;
+  z-index: 2;
 }
 
 /* We want to give the content area some more padding */
 .content {
-    padding: 1em 1em 3em;
+  padding: 1em 1em 3em;
 }
-
-
 
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --
@@ -188,33 +238,31 @@ body {
  * of the mobile styles.
  */
 @media (min-width: 48em) {
+  /* We increase the body font size */
+  body {
+    font-size: 16px;
+  }
 
-    /* We increase the body font size */
-    body {
-        font-size: 16px;
-    }
-
-    /* We decrease the width of the .splash, since we have more width
+  /* We decrease the width of the .splash, since we have more width
     to work with */
-    .splash {
-        width: 50%;
-        height: 50%;
-    }
+  .splash {
+    width: 50%;
+    height: 50%;
+  }
 
-    .splash-head {
-        font-size: 250%;
-    }
+  .splash-head {
+    font-size: 250%;
+  }
 
-    .splash-container {
-        background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
-    }}
+  .splash-container {
+    background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
+  }
+}
 
-    /* We remove the border-separator assigned to .l-box-lrg */
-    .l-box-lrg {
-        border: none;
-    }
-
-
+/* We remove the border-separator assigned to .l-box-lrg */
+.l-box-lrg {
+  border: none;
+}
 
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
@@ -222,11 +270,12 @@ body {
  * of the mobile and tablet styles.
  */
 @media (min-width: 78em) {
-    /* We increase the header font size even more */
-    .splash-head {
-        font-size: 300%;
-    }
+  /* We increase the header font size even more */
+  .splash-head {
+    font-size: 300%;
+  }
 
-    .splash-container {
-        background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
-    }}
+  .splash-container {
+    background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
+  }
+}
