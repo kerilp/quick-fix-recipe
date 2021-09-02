@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,25 +12,28 @@
     <title>My Recipes</title>
 
 </head>
+
 <body>
-        <!-- TO DO: make this header match the one in index.html -->
-        <div class="pure-menu pure-menu-horizontal">
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a href="./index.html" class="pure-menu-link">Home</a></li>
-            </ul>
+    <div class="header">
+
+        <div class="pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" href="./index.html">Home</a>
+            <a class="pure-menu-heading" id="randomizer" href>Randomize</a>
         </div>
+    </div>
 
     <!-- TO DO: make the form a consistent width and more centered with the page -->
     <div class="sidebar pure-u-1 pure-u-md-1-4">
-        
+
     </div>
 
     <div class="content pure-u-1 pure-u-md-3-4">
-        <h1 id="result-text"></h1>
+        <h2 id="result-text"></h2>
         <!-- A wrapper for all the results -->
         <div id="display-results" class="pure-g"></div>
     </div>
 
     <script src="./assets/js/recipes.js"></script>
 </body>
+
 </html>

@@ -167,7 +167,6 @@ function randomRecipe(event) {
     event.preventDefault();
     var random = Math.floor(Math.random() * 2) + 1;
     if(random === 1) {
-        // food
         var randomMeal = 'https://www.themealdb.com/api/json/v1/1/random.php';
         fetch(randomMeal)
         .then(function (response) {
@@ -183,7 +182,6 @@ function randomRecipe(event) {
             console.error(error);
         });
     } else {
-        //drink
         var randomDrink = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
         fetch(randomDrink)
         .then(function (response) {

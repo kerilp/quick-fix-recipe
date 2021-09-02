@@ -5,14 +5,29 @@
     box-sizing: border-box;
 }
 
+/* Element Selectors */
+body {
+    line-height: 1.3em;
+    font-family: "Open Sans", sans-serif;
+}
+
 /* Class Selectors */
 .pure-menu {
+    display: flex;
     background-color: white;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+a:hover,
+a:focus {
+    background-color: rgba(0, 0, 0, 0.1);
     color: black;
+    border-radius: 4px;
 }
 
 .sidebar {
-    background-color: rgb(88, 192, 88);
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
     height: 100vh;
     position: fixed;
     color: black;
@@ -20,13 +35,14 @@
 
 .content {
     margin-left: 25%;
-    background-color: lightgray;
+    min-height: 100vh;
+    background-color: rgba(76, 139, 4, 0.5);
 }
 
 .card {
     margin: 10px;
     background-color: #fff;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.7);
     border-radius: 8px;
     overflow: hidden;
 }
@@ -39,6 +55,7 @@
 .recipe-img {
     object-fit: cover;
     height: 100%;
+    border-right: 1px solid rgba(0, 0, 0, 0.8);
 }
 
 .recipe-info {
@@ -54,7 +71,8 @@
 }
 
 .title-underline {
-    border-top: 1px solid gray;
+    border-top: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 6px 0px;
 }
 
 .ingred-list {
@@ -69,7 +87,7 @@
 .tags li {
     display: inline-block;
     padding: 6px;
-    color: gray;
+    color: rgba(0, 0, 0, 0.8);
     font-style: italic;
 }
 
@@ -86,14 +104,43 @@
 }
 
 /* ID Selectors */
+
 #result-text {
+    padding-top: 50px;
+    padding: 60px 0px 10px 10px;
+    padding-left: 10px;
+}
+
+#search-form {
+    position: relative;
+    top: 10%;
     padding: 10px;
+    justify-content: center;
+}
+
+#search-criteria,
+#search-input,
+#submit-button {
+    width: 100%;
+}
+
+#submit-button {
+    background-color: goldenrod;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 767px) {
+    .pure-menu {
+        justify-content: space-around;
+    }
     .sidebar {
         height: auto;
         position: relative;
+    }
+    #search-form {
+        margin-top: 10%;
+        padding: 0px 50px;
     }
     .content {
         margin-left: 0%;

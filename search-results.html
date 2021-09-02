@@ -13,34 +13,32 @@
 </head>
 
 <body>
-    <!-- TO DO: make this header match the one in index.html -->
-    <div class="pure-menu pure-menu-horizontal">
-        <ul class="pure-menu-list">
-            <li class="pure-menu-item"><a href="./index.html" class="pure-menu-link">Home</a></li>
-            <li class="pure-menu-item"><a href="./my-recipes.html" class="pure-menu-link">My Recipes</a></li>
-            <li class="pure-menu-item"><a href id="randomizer" class="pure-menu-link">Randomize</a></li>
-        </ul>
+    
+    <div class="header">
+
+        <div class="pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" href="./index.html">Home</a>
+            <a class="pure-menu-heading" href="./my-recipes.html">My Recipes</a>
+            <a class="pure-menu-heading" id="randomizer" href>Randomize</a>
+        </div>
     </div>
 
-    <!-- TO DO: make the form a consistent width and more centered with the page -->
     <div class="sidebar pure-u-1 pure-u-md-1-4">
         <form id="search-form" class="pure-form pure-form-stacked">
             <fieldset>
-                <legend>Search for Recipe:</legend>
-                <input id="search-input" type="text" placeholder="Search" />
+                <input id="search-input" type="text" placeholder="Search Recipes..." />
                 <select id="search-criteria">
                     <option value disabled selected>Search by Type</option>
                     <option value="food">Food</option>
                     <option value="drink">Drink</option>
                 </select>
-                <button type="submit" class="pure-button pure-button-primary">Search</button>
+                <button id="submit-button" type="submit" class="pure-button">Search</button>
             </fieldset>
         </form>
     </div>
 
     <div class="content pure-u-1 pure-u-md-3-4">
-        <h1 id="result-text"></h1>
-        <!-- A wrapper for all the results -->
+        <h2 id="result-text"></h2>
         <div id="display-results" class="pure-g"></div>
     </div>
 
