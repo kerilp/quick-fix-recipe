@@ -8,12 +8,13 @@ function searchDrinkApi(query) {
       return response.json();
     })
     .then(function (data) {
-      resultTextEl.textContent = "Showing results for " + query;
+      var searchTerm = query.replace("%20", " ");
+            resultTextEl.textContent = 'Showing results for ' + searchTerm;
       
       if (data.drinks === null || !data.drinks.length) {
         // TODO: Return data instead of just logging
         console.log("No results found");
-        resultTextEl.textContent = "No results for " + query;
+        resultTextEl.textContent = 'No results for ' + searchTerm;
         return;
       } else {
         resultContentEl.textContent = "";
@@ -42,6 +43,9 @@ function searchDrinkApi(query) {
           var tagsArr = [];
           if (drink.strCategory){
             tagsArr.push(drink.strCategory)
+          }
+          if(drink.strAlcoholic){
+            tagsArr.push(drink.strAlcoholic)
           }
           if(drink.strTags){
             tagsArr.push(drink.strTags)
