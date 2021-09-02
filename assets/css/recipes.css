@@ -19,8 +19,8 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-a:hover,
-a:focus {
+.pure-menu a:hover,
+.pure-menu a:focus {
     background-color: rgba(0, 0, 0, 0.1);
     color: black;
     border-radius: 4px;
@@ -103,13 +103,36 @@ a:focus {
     background-color: goldenrod;
 }
 
+.recipe-link {
+    list-style-type: none;
+    text-decoration: none;
+    line-height: 1.7em;
+    font-size: 18px;
+    color: white;
+}
+
 /* ID Selectors */
 
 #result-text {
-    padding-top: 50px;
     padding: 60px 0px 10px 10px;
-    padding-left: 10px;
 }
+
+#saved-recipes {
+    position: relative;
+    top: 10%;
+    padding: 20px;
+    justify-content: center;
+    list-style-type: none;
+    text-align: left;
+}
+
+#recipes-title {
+    padding: 5px 0px;
+    list-style-type: none;
+    text-decoration: underline;
+    color: white;
+}
+
 
 @media (max-width: 767px) {
     .pure-menu {
@@ -119,11 +142,11 @@ a:focus {
         height: auto;
         position: relative;
     }
-    #search-form {
-        margin-top: 10%;
-        padding: 0px 50px;
-    }
     .content {
         margin-left: 0%;
+    }
+    #saved-recipes {
+        margin-top: 10%;
+        padding: 0px 50px;
     }
 }
