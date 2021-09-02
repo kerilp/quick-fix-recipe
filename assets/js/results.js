@@ -14,7 +14,6 @@ function getParams() {
     if (criteria === 'drink') {
         // run drink api fetch request
         searchDrinkApi(query);
-        //renderPage()
     }
 }
 
