@@ -1,6 +1,9 @@
 var searchEl = document.querySelector('#search-form');
 var resultTextEl = document.querySelector('#result-text');
 var resultContentEl = document.querySelector('#display-results');
+var saveBtnEl = document.querySelector('.save-button');
+var savedRecipes = localStorage.getItem('savedRecipes') || [];
+localStorage.setItem('savedRecipes', savedRecipes);
 
 function getParams() {
     var searchParams = document.location.search.split('&');
@@ -33,7 +36,13 @@ function displayCard(recipeObj) {
 
     var saveBtn = document.createElement('button');
     saveBtn.classList.add('pure-button', 'save-button');
-    saveBtn.textContent = 'Save';
+    saveBtn.setAttribute('save-id', recipeObj.id);
+    if(localStorage.getItem('savedRecipes').includes(recipeObj.id)) {
+        saveBtn.classList.add('saved');
+        saveBtn.textContent = '★';
+    } else {
+        saveBtn.textContent = '☆';
+    }
     imgContainer.appendChild(saveBtn);
 
     var recipeDiv = document.createElement('div');
@@ -167,3 +176,36 @@ function formSubmit(event) {
 
 getParams();
 searchEl.addEventListener('submit', formSubmit);
+resultContentEl.addEventListener('click', function(event){
+    event.preventDefault();
+
+    if(event.target.matches('button')){
+        
+        var savedCard = event.target.getAttribute('save-id');
+        if(event.target.classList.contains('saved')) {
+            event.target.classList.remove('saved');
+            event.target.textContent = '☆';
+            savedRecipes = JSON.parse(localStorage.getItem("savedRecipes"));
+            for(var i = 0; i < savedRecipes.length; i++) {
+                if (savedRecipes[i] === savedCard) {
+                    savedRecipes.splice(i, 1);
+                }
+            }
+            localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+            return;
+        } else {
+            event.target.classList.add('saved');
+            event.target.textContent = '★';
+            
+            console.log(savedCard);
+    
+            if(localStorage.getItem("savedRecipes")) {
+                savedRecipes = JSON.parse(localStorage.getItem("savedRecipes"));
+            }
+            if(!savedRecipes.includes(savedCard)) {
+                savedRecipes.push(savedCard);
+                localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+            }
+        }
+    }
+});
