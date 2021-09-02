@@ -106,9 +106,7 @@ a:focus {
 /* ID Selectors */
 
 #result-text {
-    padding-top: 50px;
     padding: 60px 0px 10px 10px;
-    padding-left: 10px;
 }
 
 #search-form {
@@ -144,5 +142,8 @@ a:focus {
     }
     .content {
         margin-left: 0%;
+    }
+    #result-text {
+        padding: 20px 0px 10px 10px;
     }
 }
