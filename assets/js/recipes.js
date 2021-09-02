@@ -13,11 +13,8 @@ function getSaved() {
         var query = savedRecipes[i];
         if (query.startsWith('5')) {
             searchMealApiByID(query);
-        }
-        if(savedRecipes[i].startsWith('1')) {
-            var drinkUrl = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
-            drinkUrl = drinkUrl + savedRecipes[i];
-            searchDrinkApiByID(drinkUrl);
+        }else if(query.startsWith('1')) {
+            searchDrinkApiByID(query);
         }
     }
 
@@ -103,17 +100,18 @@ function displaySavedRecipe(recipeObj) {
 function searchMealApiByID(query) {
     var mealUrl = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
     mealUrl = mealUrl + query;
-    console.log(mealUrl);
+    //console.log(mealUrl);
 
     fetch(mealUrl)
         .then(function (response) {
-            console.log(response);
+            //console.log(response);
             return response.json();
         })
         .then(function (data) {
             resultTextEl.textContent = 'My Saved Recipes';
             var resultMeal = data.meals[0];
             var recipeId = resultMeal.idMeal;
+            console.log(recipeId)
             var recipeName = resultMeal.strMeal;
             var recipeImgSrc = resultMeal.strMealThumb;
             var instructions = resultMeal.strInstructions;
@@ -152,6 +150,63 @@ function searchMealApiByID(query) {
             console.error(error);
         });
 }
+
+function searchDrinkApiByID(query) {
+  var drinkUrl = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+  
+  var drinkUrl = drinkUrl + query;
+  //console.log(drinkUrl)
+  fetch(drinkUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+        console.log(data)
+      resultTextEl.textContent = 'My Saved Recipes';
+          var drink = data.drinks[0];
+          var drinkImg = drink.strDrinkThumb;
+          var drinkName = drink.strDrink;
+          var glassType = drink.strGlass;
+          var instruction = drink.strInstructions;
+          var drinkId = drink.idDrink;
+          console.log(drinkId)
+          var ingredients = [];
+          
+          for (var j = 1; j <= 15; j++) {
+            var ingredient = drink["strIngredient" + j];
+            if (ingredient !== null) {
+              const measure = drink["strMeasure" + j];
+              if (measure !== null) {
+                ingredients.push(measure.trim() + " " + ingredient.trim());
+              } else {
+                ingredients.push(ingredient);
+              }
+            }
+          }
+
+          var tagsArr = [];
+          if (drink.strCategory){
+            tagsArr.push(drink.strCategory)
+          }
+          if(drink.strTags){
+            tagsArr.push(drink.strTags)
+          }
+          var cockTails = {
+            id: drinkId,
+            name: drinkName,
+            image: drinkImg,
+            ingred: ingredients,
+            glass: glassType,
+            instr: instruction,
+            tags: tagsArr,
+          };
+          displaySavedRecipe(cockTails);
+        
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};
 
 getSaved();
 
