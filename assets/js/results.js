@@ -58,6 +58,12 @@ function displayCard(recipeObj) {
     }
     recipeDiv.appendChild(ingredList);
 
+    if(recipeObj.glass) {
+        var glass = document.createElement('h3');
+        glass.textContent = 'Type of Glass: ' + recipeObj.glass;
+        recipeDiv.appendChild(glass);
+    }
+
     var prepTitle = document.createElement('h3');
     prepTitle.textContent = 'Preparation:';
     recipeDiv.appendChild(prepTitle);
