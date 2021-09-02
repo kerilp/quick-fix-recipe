@@ -1,4 +1,5 @@
 var searchEl = document.querySelector('#search-form');
+var randomBtnEl = document.querySelector('#randomizer');
 var resultTextEl = document.querySelector('#result-text');
 var resultContentEl = document.querySelector('#display-results');
 var saveBtnEl = document.querySelector('.save-button');
@@ -55,8 +56,7 @@ function displayCard(recipeObj) {
 
     var ingredTitle = document.createElement('h3');
     ingredTitle.textContent = 'Ingredients:';
-    recipeDiv.appendChild(ingredTitle);
-
+    
     var ingredList = document.createElement('ul');
     ingredList.classList.add('ingred-list');
     for (var i = 0; i < recipeObj.ingred.length; i++) {
@@ -64,8 +64,7 @@ function displayCard(recipeObj) {
         item.textContent = '• ' + recipeObj.ingred[i];
         ingredList.appendChild(item);
     }
-    recipeDiv.appendChild(ingredList);
-
+    
     if(recipeObj.glass) {
         var glass = document.createElement('h3');
         glass.classList.add('title-underline');
@@ -74,7 +73,9 @@ function displayCard(recipeObj) {
     } else {
         ingredTitle.classList.add('title-underline');
     }
-
+    recipeDiv.appendChild(ingredTitle);
+    recipeDiv.appendChild(ingredList);
+    
     var prepTitle = document.createElement('h3');
     prepTitle.textContent = 'Preparation:';
     recipeDiv.appendChild(prepTitle);
@@ -106,11 +107,13 @@ function searchMealApi(query) {
             return response.json();
         })
         .then(function (data) {
-            resultTextEl.textContent = 'Showing results for ' + query;
+            var searchTerm = query.replace("%20", " ");
+            resultTextEl.textContent = 'Showing results for ' + searchTerm;
 
             if (data.meals === null || !data.meals.length) {
                 console.log('No results found');
-                resultTextEl.textContent = 'No results for ' + query;
+                resultTextEl.textContent = 'No results for ' + searchTerm;
+                return;
             } else {
                 resultContentEl.textContent = '';
                 for (var i = 0; i < data.meals.length; i++) {
@@ -138,6 +141,9 @@ function searchMealApi(query) {
                     if(resultMeal.strArea) {
                         tagsArr.push(resultMeal.strArea);
                     }
+                    if(resultMeal.strTags) {
+                        tagsArr.push(resultMeal.strTags);
+                    }
 
                     var mealObj = {
                         id: recipeId,
@@ -155,6 +161,44 @@ function searchMealApi(query) {
         .catch(function (error) {
             console.error(error);
         });
+}
+
+function randomRecipe(event) {
+    event.preventDefault();
+    var random = Math.floor(Math.random() * 2) + 1;
+    if(random === 1) {
+        // food
+        var randomMeal = 'https://www.themealdb.com/api/json/v1/1/random.php';
+        fetch(randomMeal)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            var input = data.meals[0].strMeal;
+            var criteria = 'food';
+            var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;
+            location.assign(queryString);
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
+    } else {
+        //drink
+        var randomDrink = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
+        fetch(randomDrink)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            var input = data.drinks[0].strDrink;
+            var criteria = 'drink';
+            var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;
+            location.assign(queryString);
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
+    }
 }
 
 function formSubmit(event) {
@@ -177,6 +221,7 @@ function formSubmit(event) {
 
 getParams();
 searchEl.addEventListener('submit', formSubmit);
+randomBtnEl.addEventListener('click', randomRecipe);
 resultContentEl.addEventListener('click', function(event){
     event.preventDefault();
 
