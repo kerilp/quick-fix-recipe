@@ -99,7 +99,6 @@ body {
   color: rgb(0, 0, 0);
   font-weight: 400;
   font-size: 45px;
- 
 }
 
 /*
@@ -169,6 +168,7 @@ body {
     color: rgb(255, 255, 255);
     font-weight: 400;
     font-size: 30px;
+    font-size: 45px;
   }
   .pure-form input[type] {
     background-color: hsla(0, 0%, 100%, 0.822);
@@ -234,4 +234,52 @@ body {
 /* We want to give the content area some more padding */
 .content {
   padding: 1em 1em 3em;
+}
+
+/*
+ * -- TABLET (AND UP) MEDIA QUERIES --
+ * On tablets and other medium-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+@media (min-width: 48em) {
+  /* We increase the body font size */
+  body {
+    font-size: 16px;
+  }
+
+  /* We decrease the width of the .splash, since we have more width
+    to work with */
+  .splash {
+    width: 50%;
+    height: 50%;
+  }
+
+  .splash-head {
+    font-size: 250%;
+  }
+
+  .splash-container {
+    background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
+  }
+}
+
+/* We remove the border-separator assigned to .l-box-lrg */
+.l-box-lrg {
+  border: none;
+}
+
+/*
+ * -- DESKTOP (AND UP) MEDIA QUERIES --
+ * On desktops and other large devices, we want to over-ride some
+ * of the mobile and tablet styles.
+ */
+@media (min-width: 78em) {
+  /* We increase the header font size even more */
+  .splash-head {
+    font-size: 300%;
+  }
+
+  .splash-container {
+    background-image: url("https://source.unsplash.com/1600x900/?cocktails,Food");
+  }
 }
