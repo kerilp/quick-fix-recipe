@@ -20,8 +20,7 @@
 <div class="header">
 
     <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-        <a class="pure-menu-heading" href="">My Recipes</a>
-
+        <a class="pure-menu-heading" href="./my-recipes.html">My Recipes</a>
     </div>
 </div>
 <div class="splash-container">
@@ -32,11 +31,11 @@
             <div class="splash">
         <form class="pure-form pure-form-stacked">
             <fieldset>
-                <input type="text" placeholder="Search.."/>
-                <select class="option">
-                    <option value disabled selected>Option</option>
-                    <option>Food</option>
-                    <option>Drink</option>
+                <input id="search-input" type="text" placeholder="Search..."/>
+                <select id="search-criteria" class="option">
+                    <option value disabled selected>Search by Type</option>
+                    <option value="food">Food</option>
+                    <option value="drink">Drink</option>
                 </select>
                 <button type="submit" class="pure">Submit</button>
             </fieldset>
@@ -44,7 +43,7 @@
 
 
 
-
+        <script src="./assets/js/script.js"></script>
         </body>
 
 </html>
