@@ -7,23 +7,12 @@
 
 /* Class Selectors */
 .pure-menu {
-<<<<<<< HEAD
-    background-color: lemonchiffon;
-=======
     background-color: lightgray;
->>>>>>> main
     color: black;
 }
 
 .sidebar {
     background-color: lightgray;
-<<<<<<< HEAD
-    color: black;
-}
-
-.l-box {
-    padding: 1em;
-=======
     height: 100vh;
     position: fixed;
     color: black;
@@ -36,22 +25,10 @@
 .card {
     margin: 10px;
     border: 2px solid gray;
->>>>>>> main
 }
 
 .container {
     position: relative;
-<<<<<<< HEAD
-}
-
-.card {
-    margin: 10px;
-    border: 2px solid gray;
-}
-
-#display-results {
-    background-color:lightseagreen;
-=======
     height: 100%;
 }
 
@@ -94,5 +71,4 @@
 
 #result-text {
     padding: 10px;
->>>>>>> main
 }
