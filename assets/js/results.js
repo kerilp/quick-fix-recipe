@@ -111,7 +111,6 @@ function searchMealApi(query) {
             resultTextEl.textContent = 'Showing results for ' + searchTerm;
 
             if (data.meals === null || !data.meals.length) {
-                console.log('No results found');
                 resultTextEl.textContent = 'No results for ' + searchTerm;
                 return;
             } else {
@@ -157,9 +156,6 @@ function searchMealApi(query) {
                     displayCard(mealObj);
                 }
             }
-        })
-        .catch(function (error) {
-            console.error(error);
         });
 }
 
@@ -177,9 +173,6 @@ function randomRecipe(event) {
             var criteria = 'food';
             var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;
             location.assign(queryString);
-        })
-        .catch(function (error) {
-            console.error(error);
         });
     } else {
         var randomDrink = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
@@ -192,9 +185,6 @@ function randomRecipe(event) {
             var criteria = 'drink';
             var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;
             location.assign(queryString);
-        })
-        .catch(function (error) {
-            console.error(error);
         });
     }
 }
@@ -206,7 +196,6 @@ function formSubmit(event) {
     var criteria = document.querySelector('#search-criteria').value;
 
     if (!input || !criteria) {
-        console.error('No search criteria entered');
         return;
     }
     var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;

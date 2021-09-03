@@ -152,9 +152,6 @@ function searchMealApiByID(query) {
             }
 
             displaySavedRecipe(mealObj);
-        })
-        .catch(function (error) {
-            console.error(error);
         });
 }
 
@@ -206,9 +203,6 @@ function searchDrinkApiByID(query) {
             };
             displaySavedRecipe(cockTails);
 
-        })
-        .catch(function (error) {
-            console.log(error);
         });
 };
 
@@ -241,9 +235,6 @@ function randomRecipe(event) {
                 var criteria = 'drink';
                 var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;
                 location.assign(queryString);
-            })
-            .catch(function (error) {
-                console.error(error);
             });
     }
 }
