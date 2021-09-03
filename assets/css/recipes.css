@@ -63,7 +63,7 @@ body {
 .recipe-img {
   object-fit: cover;
   height: 100%;
-  border-right: 1px solid rgba(0, 0, 0, 0.8);
+  border-right: 1px solid rgb(255, 217, 0);
 }
 
 .recipe-info {
@@ -108,7 +108,7 @@ body {
 }
 
 .saved {
-  background-color: goldenrod;
+  background-color: rgb(245, 181, 18);
 }
 
 .recipe-link {
@@ -141,6 +141,8 @@ body {
 
 #result-text {
   padding: 10px;
+  text-align: right;
+  margin-right: 70px;
 }
 
 #saved-recipes {

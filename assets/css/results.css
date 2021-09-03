@@ -43,7 +43,7 @@ margin-top:20px;
 }
 
 .sidebar {
-  background-image:url("./main-css/photo-copy.png");
+  background-image:url("../images/photo-copy.png");
   height: 100vh;
   position: fixed;
   color: white;
@@ -52,10 +52,9 @@ margin-top:20px;
 }
 
 .content {
-  margin-left: 26%;
-  min-height: 100vh;
-  background-color: rgb(255, 255, 255);
-  margin-top: 10px;
+    margin-left: 25%;
+    min-height: 100vh;
+    background-color: lemonchiffon;
 }
 
 .card {
@@ -64,13 +63,12 @@ margin-top:20px;
   box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.7);
   border-radius: 8px;
   overflow: hidden;
-  border: solid 1px rgb(0, 0, 0);
+  border: solid 1px black;
 }
 
 .container {
   position: relative;
   height: 100%;
-  border: none;
 }
 
 .recipe-img {
@@ -91,10 +89,8 @@ margin-top:20px;
   margin: 4px 0px;
 }
 .title-underline {
-  border-top: 1px solid rgba(177, 177, 177, 0.8);
-  padding-top: 10px;
-  padding-bottom: 10px;
-  max-width: 300px;
+    border-top: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 6px 0px;
 }
 
 .ingred-list {
@@ -121,14 +117,18 @@ margin-top:20px;
   padding: 0.1em 0.3em;
 }
 
-.saved:hover {
+.save-button:hover {
   background-color: rgb(245, 181, 18);
+}
+
+.saved {
+    background-color: rgb(245, 181, 18);
 }
 
 /* ID Selectors */
 
 #result-text {
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   text-align: right;
   margin-right: 70px;
 }
@@ -190,8 +190,5 @@ margin-top:20px;
   .content {
     margin-left: 0%;
     margin-top: 20px;
-  }
-  #result-text {
-    padding: 10px;
   }
 }
