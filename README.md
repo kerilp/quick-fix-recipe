@@ -37,9 +37,9 @@ Third Party API:
 🍸 [TheCocktailDB](https://www.thecocktaildb.com/api.php) --- An open, crowd-sourced database of drinks and cocktails from around the world.
 
 ## Screenshots
-![Quick Fix Recipe Homepage](./assets/images/recipe.png)
-![Search Results Page Demo]()
-![My Recipes Page Demo]()
+![Quick Fix Recipe Homepage](./assets/images/landing-page.png)
+![Search Results Page Demo](./assets/images/search-results.png)
+![My Recipes Page Demo](./assets/images/my-recipes.png)
 
 ## Collaborators: 
 
