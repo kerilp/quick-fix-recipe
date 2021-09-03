@@ -5,7 +5,7 @@ function randomRecipe(event) {
     event.preventDefault();
     var random = Math.floor(Math.random() * 2) + 1;
     if(random === 1) {
-        // food
+        // food api fetch
         var randomMeal = 'https://www.themealdb.com/api/json/v1/1/random.php';
         fetch(randomMeal)
         .then(function (response) {
@@ -21,7 +21,7 @@ function randomRecipe(event) {
             console.error(error);
         });
     } else {
-        //drink
+        //drink api fetch
         var randomDrink = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
         fetch(randomDrink)
         .then(function (response) {
@@ -46,7 +46,6 @@ function formSubmit(event) {
     var criteria = document.querySelector('#search-criteria').value;
 
     if(!input || !criteria) {
-        console.error('No search criteria entered');
         return;
     }
     var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;

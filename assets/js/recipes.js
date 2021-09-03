@@ -2,6 +2,7 @@ var resultTextEl = document.querySelector('#result-text');
 var resultContentEl = document.querySelector('#display-results');
 var randomBtnEl = document.querySelector('#randomizer');
 var saveBtnEl = document.querySelector('.save-button');
+var recipeListEl = document.querySelector('#saved-recipes');
 var savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
 
 function getSaved() {
@@ -50,16 +51,9 @@ function displaySavedRecipe(recipeObj) {
     title.textContent = recipeObj.name;
     recipeDiv.appendChild(title);
 
-    if (recipeObj.glass) {
-        var glass = document.createElement('h3');
-        glass.textContent = 'Type of Glass: ' + recipeObj.glass;
-        recipeDiv.appendChild(glass);
-    }
-
     var ingredTitle = document.createElement('h3');
     ingredTitle.classList.add('ingred-title');
     ingredTitle.textContent = 'Ingredients:';
-    recipeDiv.appendChild(ingredTitle);
 
     var ingredList = document.createElement('ul');
     ingredList.classList.add('ingred-list');
@@ -68,13 +62,17 @@ function displaySavedRecipe(recipeObj) {
         item.textContent = '• ' + recipeObj.ingred[i];
         ingredList.appendChild(item);
     }
-    recipeDiv.appendChild(ingredList);
 
-    if (recipeObj.glass) {
+    if(recipeObj.glass) {
         var glass = document.createElement('h3');
+        glass.classList.add('title-underline');
         glass.textContent = 'Type of Glass: ' + recipeObj.glass;
         recipeDiv.appendChild(glass);
+    } else {
+        ingredTitle.classList.add('title-underline');
     }
+    recipeDiv.appendChild(ingredTitle);
+    recipeDiv.appendChild(ingredList);
 
     var prepTitle = document.createElement('h3');
     prepTitle.textContent = 'Preparation:';
@@ -96,6 +94,14 @@ function displaySavedRecipe(recipeObj) {
     card.appendChild(imgContainer);
     card.appendChild(recipeDiv);
     resultContentEl.appendChild(card);
+
+    var recipeList = document.createElement('li');
+    var recipeLink = document.createElement('a');
+    recipeLink.classList.add('recipe-link');
+    recipeLink.setAttribute('href', '#' + recipeObj.id);
+    recipeLink.textContent = '★  ' + recipeObj.name;
+    recipeList.appendChild(recipeLink);
+    recipeListEl.appendChild(recipeList);
 }
 
 function searchMealApiByID(query) {
@@ -110,7 +116,6 @@ function searchMealApiByID(query) {
             resultTextEl.textContent = 'My Saved Recipes:';
             var resultMeal = data.meals[0];
             var recipeId = resultMeal.idMeal;
-            console.log(recipeId)
             var recipeName = resultMeal.strMeal;
             var recipeImgSrc = resultMeal.strMealThumb;
             var instructions = resultMeal.strInstructions;
@@ -147,9 +152,6 @@ function searchMealApiByID(query) {
             }
 
             displaySavedRecipe(mealObj);
-        })
-        .catch(function (error) {
-            console.error(error);
         });
 }
 
@@ -162,7 +164,6 @@ function searchDrinkApiByID(query) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data)
             resultTextEl.textContent = 'My Saved Recipes:';
             var drink = data.drinks[0];
             var drinkImg = drink.strDrinkThumb;
@@ -170,7 +171,6 @@ function searchDrinkApiByID(query) {
             var glassType = drink.strGlass;
             var instruction = drink.strInstructions;
             var drinkId = drink.idDrink;
-            console.log(drinkId)
             var ingredients = [];
 
             for (var j = 1; j <= 15; j++) {
@@ -203,9 +203,6 @@ function searchDrinkApiByID(query) {
             };
             displaySavedRecipe(cockTails);
 
-        })
-        .catch(function (error) {
-            console.log(error);
         });
 };
 
@@ -238,9 +235,6 @@ function randomRecipe(event) {
                 var criteria = 'drink';
                 var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;
                 location.assign(queryString);
-            })
-            .catch(function (error) {
-                console.error(error);
             });
     }
 }

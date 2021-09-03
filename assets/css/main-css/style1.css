@@ -55,9 +55,16 @@ transition-duration: 0.4s;
   color: rgb(0, 0, 0);
   font-size: 100%;
   width: 100%;
+  max-width:85%;
   margin-bottom: 1em;
+<<<<<<< HEAD
   font-size: 45px;
   padding: 30px 30px 30px 30px;
+=======
+  font-size: 50px;
+  padding: 30px 10px 30px 10px;
+  text-align: center;
+>>>>>>> 7f6a4ecb1a40726eed2c917e520b314b6bff1bb8
 }
 
 .pure {
@@ -86,7 +93,8 @@ transition-duration: 0.4s;
 
 .option {
   font-size: 100%;
-  width: 75%;
+  width: 100%;
+  max-width:50%;
   margin-bottom: 1em;
   text-align: center;
   margin-bottom: 1em;
@@ -175,7 +183,7 @@ body {
   }
 
   .home-menu {
-    background-color: hsla(0, 0%, 0%, 0.822);
+    background-color: hsla(0, 0%, 21%, 0.822);
     font-family: "Open Sans", sans-serif;
    
    
@@ -184,8 +192,12 @@ body {
     color: rgb(189, 189, 189);
     font-weight: 400;
     font-size: 30px;
+<<<<<<< HEAD
     width:40%;
     max-width: 100%;
+=======
+    font-size: 45px;
+>>>>>>> 7f6a4ecb1a40726eed2c917e520b314b6bff1bb8
   }
 
 .pure-menu-heading:hover{
@@ -214,7 +226,7 @@ transition-duration: 0.4s;
     cursor: pointer;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     padding: 1em 2em;
     box-shadow: none;
     font-size: 20px;
@@ -223,13 +235,17 @@ transition-duration: 0.4s;
     border: none;
     border-radius: 5px;
     margin-top: 2em;
+<<<<<<< HEAD
     background-color: hsla(0, 0%, 15%, 0.822);
+=======
+    background-color: hsla(0, 0%, 100%, 0.822);
+>>>>>>> 7f6a4ecb1a40726eed2c917e520b314b6bff1bb8
   }
   .pure:hover {
-    background-color: hsl(0, 0%, 0%);
+    background-color: hsla(0, 0%, 9%, 0.822);
     color: rgb(255, 255, 255);
-    box-shadow: 0 12px 16px 0 rgba(68, 68, 68, 0.63),
-      0 17px 50px 0 rgba(70, 70, 70, 0.185);
+    box-shadow: 0 9px 10px 0 rgba(0, 0, 0, 0.397),
+      0 7px 30px 0 rgba(0, 0, 0, 0.123);
   }
 }
 

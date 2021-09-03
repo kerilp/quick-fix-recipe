@@ -107,11 +107,10 @@ function searchMealApi(query) {
             return response.json();
         })
         .then(function (data) {
-            var searchTerm = query.replaceAll("%20", " ");
+            var searchTerm = query.replace(/%20/g, " ");
             resultTextEl.textContent = 'Showing results for ' + searchTerm;
 
             if (data.meals === null || !data.meals.length) {
-                console.log('No results found');
                 resultTextEl.textContent = 'No results for ' + searchTerm;
                 return;
             } else {
@@ -157,9 +156,6 @@ function searchMealApi(query) {
                     displayCard(mealObj);
                 }
             }
-        })
-        .catch(function (error) {
-            console.error(error);
         });
 }
 
@@ -173,13 +169,10 @@ function randomRecipe(event) {
             return response.json();
         })
         .then(function (data) {
-            var input = data.meals[0].strMeal;
+            var input = data.meals[0].strMeal.replace(/&/g, ' ');
             var criteria = 'food';
             var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;
             location.assign(queryString);
-        })
-        .catch(function (error) {
-            console.error(error);
         });
     } else {
         var randomDrink = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
@@ -188,13 +181,10 @@ function randomRecipe(event) {
             return response.json();
         })
         .then(function (data) {
-            var input = data.drinks[0].strDrink;
+            var input = data.drinks[0].strDrink.replace(/&/g, '');
             var criteria = 'drink';
             var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;
             location.assign(queryString);
-        })
-        .catch(function (error) {
-            console.error(error);
         });
     }
 }
@@ -206,8 +196,6 @@ function formSubmit(event) {
     var criteria = document.querySelector('#search-criteria').value;
 
     if (!input || !criteria) {
-        // displays modal telling user they must enter a search term
-        console.error('No search criteria entered');
         return;
     }
     var queryString = './search-results.html?q=' + input + '&criteria=' + criteria;
@@ -241,8 +229,6 @@ resultContentEl.addEventListener('click', function(event){
             event.target.classList.add('saved');
             event.target.textContent = '★';
             
-            console.log(savedCard);
-    
             if(localStorage.getItem("savedRecipes")) {
                 savedRecipes = JSON.parse(localStorage.getItem("savedRecipes"));
             }

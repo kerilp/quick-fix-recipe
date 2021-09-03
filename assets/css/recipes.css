@@ -43,7 +43,7 @@ a:focus {
 .content {
     margin-left: 25%;
     min-height: 100vh;
-    background-color: rgba(76, 139, 4, 0.5);
+    background-color: lemonchiffon;
 }
 
 .card {
@@ -111,25 +111,35 @@ a:focus {
     background-color: goldenrod;
 }
 
+.recipe-link {
+    list-style-type: none;
+    text-decoration: none;
+    line-height: 1.7em;
+    font-size: 18px;
+    color: white;
+}
+
 /* ID Selectors */
 
 #result-text {
-    padding-top: 50px;
-    padding: 60px 0px 10px 10px;
-    padding-left: 10px;
+    padding: 10px;
+}
+
+#saved-recipes {
+    position: relative;
+    padding: 15px;
+    justify-content: center;
+    list-style-type: none;
+    text-align: left;
 }
 
 @media (max-width: 767px) {
-    .pure-menu {
-        justify-content: space-around;
+    .pure-menu-heading {
+        text-align: center;
     }
     .sidebar {
         height: auto;
         position: relative;
-    }
-    #search-form {
-        margin-top: 10%;
-        padding: 0px 50px;
     }
     .content {
         margin-left: 0%;
