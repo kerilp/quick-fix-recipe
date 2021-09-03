@@ -1,50 +1,49 @@
-# Quick Fix Recipe
+# Quick Fix Recipe 🍽️
 
-## Project Title: Quick-Fix-Recipe
-## Description: what the site does and how it works
-```Quick Fix Recipe is a website that helps user to find recipes for food and drinks. We have three functionalities, user can search drink or meal recipes by name or they can look up recipies randomly, if they like what they saw, they can click the star button and recipe will be saved for them. To use these functions, all users need to do is type the recipe name they want in the search box, choose a category (food or drink) and click "Search", then our website will display the recipes for them. If they want like what they saw and save it to use later, they can simply click the star button. Whenever they want to access the recipes they saved, they can click "MY RECIPES" on the nav bar and our website will bring them to the page where all the saved recipes are. If they do not know what they want or the name of the drink or food or they just want to browse and see cooking ideas, they can click the ""RANDOMIZE, the random recipe will show up. Of course,we also have the home button to bring them to the start page.```
+## Find New Recipes at the Click of a Button!
 
-## Languages & Resources Used:
-```Languages: HTML; CSS; JAVASCRIPT ```
+## How It Works:
 
-```Framework: Pure CSS```
+* Upon opening the site, the user is greeted with a landing page that features a randomized image from a curated list of relevant pictures.
 
-```Third Party API: ```
-```
-1.TheCocktailDB---An open, crowd-sourced database of drinks and cocktails from around the world.
+* The user can search for new recipes by typing in the search bar and choosing to search by either Food or Drink.
 
-2.TheMealDB---An open, crowd-sourced database of Recipes from around the world.
+* The search results then display on the page as recipe cards. Each card includes an image of the finished recipe, the relevant information for how to make it themselves, and a save button.
 
-```
-### The APIs we used from these two sources:
+* When the user clicks the save button on a recipe card, that recipe's information is saved to the user's local storage. They can click the save button again to remove that recipe from their saved list.
 
-[Lookup a single random meal](www.themealdb.com/api/json/v1/1/random.php)
+* The My Recipes page, linked in the navigation bar, use the user's local storage to display only recipes that the user has saved. The page features a Table of Contents that the user can click on to navigate to a specific recipe more easily.
 
-[Search meal by name](www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata)
+* As an alternative to searching, the user can click the Randomize button in the navigation bar on any page to display a random recipe.
 
-[Lookup full meal details by id](www.themealdb.com/api/json/v1/1/lookup.php?i=52772)
+## Links:
 
-[Search cocktail by name](www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita)
+🍹 [Live Website](https://kerilp.github.io/quick-fix-recipe/)
 
-[Lookup full cocktail details by id](www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007)
+🥪 [Source Code](https://github.com/kerilp/quick-fix-recipe)
 
-[Lookup a random cocktail](www.thecocktaildb.com/api/json/v1/1/random.php)
-## Links
+## Languages & Resources:
 
-[Live Website](https://kerilp.github.io/quick-fix-recipe/)
+Languages: HTML; CSS; JAVASCRIPT
 
-[Github](https://github.com/kerilp/quick-fix-recipe)
+Framework: [Pure CSS](https://purecss.io/)
 
-## Outcome
-![Quick fix recipe snapshot](assets/css/recipe.png)
+Images: [Unsplash Source](https://source.unsplash.com/)
 
+Third Party API:
+
+🌮 [TheMealDB](https://www.themealdb.com/api.php) --- An open, crowd-sourced database of recipes from around the world.
+
+🍸 [TheCocktailDB](https://www.thecocktaildb.com/api.php) --- An open, crowd-sourced database of drinks and cocktails from around the world.
+
+## Screenshots
+![Quick Fix Recipe Homepage](./assets/images/recipe.png)
+![Search Results Page Demo]()
+![My Recipes Page Demo]()
 
 ## Collaborators: 
-```
-Melissa Vint 
-Anthony Carr  
-Keri Price
-Yinping Gao
-```
 
-
+⭐ [Keri Price](https://github.com/kerilp)
+⭐ [Yinping Gao](https://github.com/yinping-520)
+⭐ [Melissa Vint](https://github.com/Mvint2647)
+⭐ [Anthony Carr](https://github.com/acarr13)

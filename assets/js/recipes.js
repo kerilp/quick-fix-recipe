@@ -116,7 +116,6 @@ function searchMealApiByID(query) {
             resultTextEl.textContent = 'My Saved Recipes:';
             var resultMeal = data.meals[0];
             var recipeId = resultMeal.idMeal;
-            console.log(recipeId)
             var recipeName = resultMeal.strMeal;
             var recipeImgSrc = resultMeal.strMealThumb;
             var instructions = resultMeal.strInstructions;
@@ -168,7 +167,6 @@ function searchDrinkApiByID(query) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data)
             resultTextEl.textContent = 'My Saved Recipes:';
             var drink = data.drinks[0];
             var drinkImg = drink.strDrinkThumb;
@@ -176,7 +174,6 @@ function searchDrinkApiByID(query) {
             var glassType = drink.strGlass;
             var instruction = drink.strInstructions;
             var drinkId = drink.idDrink;
-            console.log(drinkId)
             var ingredients = [];
 
             for (var j = 1; j <= 15; j++) {

@@ -1,18 +1,16 @@
 var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
 function searchDrinkApi(query) {
-  //console.log(name);
   var endPoint = apiUrl + query;
   fetch(endPoint)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      var searchTerm = query.replaceAll("%20", " ");
+      var searchTerm = query.replace(/%20/g, " ");
             resultTextEl.textContent = 'Showing results for ' + searchTerm;
       
       if (data.drinks === null || !data.drinks.length) {
-        // TODO: Return data instead of just logging
         console.log("No results found");
         resultTextEl.textContent = 'No results for ' + searchTerm;
         return;
