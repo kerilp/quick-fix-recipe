@@ -57,14 +57,11 @@ transition-duration: 0.4s;
   width: 100%;
   max-width:85%;
   margin-bottom: 1em;
-<<<<<<< HEAD
   font-size: 45px;
   padding: 30px 30px 30px 30px;
-=======
   font-size: 50px;
   padding: 30px 10px 30px 10px;
   text-align: center;
->>>>>>> 7f6a4ecb1a40726eed2c917e520b314b6bff1bb8
 }
 
 .pure {
@@ -192,12 +189,8 @@ body {
     color: rgb(189, 189, 189);
     font-weight: 400;
     font-size: 30px;
-<<<<<<< HEAD
     width:40%;
     max-width: 100%;
-=======
-    font-size: 45px;
->>>>>>> 7f6a4ecb1a40726eed2c917e520b314b6bff1bb8
   }
 
 .pure-menu-heading:hover{
@@ -216,9 +209,8 @@ transition-duration: 0.4s;
     color: rgb(133, 133, 133);
     width: 100%;
     margin-bottom: 1em;
-    font-size: 25px;
+    font-size: 45px;
     padding: 30px 30px 30px 30px;
-    text-align: center;
   }
 
   .pure {
@@ -235,11 +227,7 @@ transition-duration: 0.4s;
     border: none;
     border-radius: 5px;
     margin-top: 2em;
-<<<<<<< HEAD
     background-color: hsla(0, 0%, 15%, 0.822);
-=======
-    background-color: hsla(0, 0%, 100%, 0.822);
->>>>>>> 7f6a4ecb1a40726eed2c917e520b314b6bff1bb8
   }
   .pure:hover {
     background-color: hsla(0, 0%, 9%, 0.822);
