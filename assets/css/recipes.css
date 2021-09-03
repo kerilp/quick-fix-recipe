@@ -12,21 +12,25 @@ body {
 }
 
 /* Class Selectors */
-.pure-menu {
+.pure-menu-heading{
     display: flex;
+    background-color: rgb(255, 255, 255);
     font-size: 20px;
+    border-bottom: solid 1px rgb(255, 217, 0);
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
-.pure-menu-heading {
-    background-color: rgba(0, 0, 0, 0.1);
+a:hover,
+a:focus {
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 2px 6px 0 rgba(175, 175, 175, 0),
+      0 6px 5px 0 rgba(119, 118, 118, 0.486);
     border-radius: 4px;
-    color: white;
-}
-
-.pure-menu a:hover,
-.pure-menu a:focus {
-    background-color: rgba(0, 0, 0, 0.2);
-    color: goldenrod;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    color: rgb(0, 0, 0);
 }
 
 .sidebar {
@@ -53,6 +57,7 @@ body {
 .container {
     position: relative;
     height: 100%;
+    
 }
 
 .recipe-img {
