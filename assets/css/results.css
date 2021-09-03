@@ -14,16 +14,19 @@ body {
 /* Class Selectors */
 .pure-menu {
     display: flex;
-    background-color: white;
     font-size: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-a:hover,
-a:focus {
+.pure-menu-heading {
     background-color: rgba(0, 0, 0, 0.1);
-    color: black;
     border-radius: 4px;
+    color: white;
+}
+
+.pure-menu a:hover,
+.pure-menu a:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: goldenrod;
 }
 
 .sidebar {
@@ -36,7 +39,7 @@ a:focus {
 .content {
     margin-left: 25%;
     min-height: 100vh;
-    background-color: rgba(76, 139, 4, 0.5);
+    background-color: lemonchiffon;
 }
 
 .card {
@@ -106,13 +109,12 @@ a:focus {
 /* ID Selectors */
 
 #result-text {
-    padding: 60px 0px 10px 10px;
+    padding: 10px;
 }
 
 #search-form {
     position: relative;
-    top: 10%;
-    padding: 10px;
+    padding: 15px;
     justify-content: center;
 }
 
@@ -129,21 +131,17 @@ a:focus {
 }
 
 @media (max-width: 767px) {
-    .pure-menu {
-        justify-content: space-around;
+    .pure-menu-heading {
+        text-align: center;
     }
     .sidebar {
         height: auto;
         position: relative;
     }
     #search-form {
-        margin-top: 10%;
-        padding: 0px 50px;
+        padding: 10px 50px;
     }
     .content {
         margin-left: 0%;
-    }
-    #result-text {
-        padding: 20px 0px 10px 10px;
     }
 }
