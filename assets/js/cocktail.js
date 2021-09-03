@@ -11,7 +11,6 @@ function searchDrinkApi(query) {
             resultTextEl.textContent = 'Showing results for ' + searchTerm;
       
       if (data.drinks === null || !data.drinks.length) {
-        console.log("No results found");
         resultTextEl.textContent = 'No results for ' + searchTerm;
         return;
       } else {
@@ -61,8 +60,5 @@ function searchDrinkApi(query) {
           displayCard(cockTails);
         }
       }
-    })
-    .catch(function (error) {
-      console.log(error);
     });
 }
