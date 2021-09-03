@@ -57,14 +57,8 @@ transition-duration: 0.4s;
   width: 100%;
   max-width:85%;
   margin-bottom: 1em;
-<<<<<<< HEAD
   font-size: 45px;
   padding: 30px 30px 30px 30px;
-=======
-  font-size: 50px;
-  padding: 30px 10px 30px 10px;
-  text-align: center;
->>>>>>> 7f6a4ecb1a40726eed2c917e520b314b6bff1bb8
 }
 
 .pure {
